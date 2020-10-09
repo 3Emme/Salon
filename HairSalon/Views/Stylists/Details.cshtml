@@ -3,6 +3,7 @@
 }
 @using HairSalon.Models;
 <h1>Stylist #@Model["stylist"].StylistId : @Model["stylist"].StylistName</h1>
+<p>Details: @Model["stylist"].StylistDetails</p>
 @if (Model["clients"].Count == 0)
 {
   <h3>No clients found!</h3>
