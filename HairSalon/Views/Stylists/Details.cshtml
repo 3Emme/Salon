@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models;
+<h1>Stylist #@Model["stylist"].StylistId : @Model["stylist"].StylistName</h1>
+@if (Model["clients"].Count == 0)
+{
+  <h3>No clients found!</h3>
+}
+@foreach (Client client in Model["clients"])
+{
+  <li><a href="/clients/details/@client.ClientId">@client.ClientName</a> | @client.Stylist.StylistName</li>
+}
+
+<p>@Html.ActionLink("Edit Stylist","Edit",new {id = Model["stylist"].StylistId})</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete",new {id = Model["stylist"].StylistId})</p>
+<p>@Html.ActionLink("Go Back to Stylists","Index","Stylists")</p>  
