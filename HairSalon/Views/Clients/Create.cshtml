@@ -6,17 +6,12 @@
 @using (Html.BeginForm())
 { 
     @Html.Hidden("StylistId", (int)ViewBag.StylistId)
-    @Html.LabelFor(model => model.ClientUser)
-    @Html.TextBoxFor(model => model.ClientUser)
-    @Html.LabelFor(model => model.ClientDate)
-    @Html.TextBoxFor(model => model.ClientDate)
-    @Html.LabelFor(model => model.ClientHeader)
-    @Html.TextBoxFor(model => model.ClientHeader)
-    @Html.LabelFor(model => model.ClientBody)
-    @Html.TextBoxFor(model => model.ClientBody)
-    
-    <input type="submit" value="Add new Stylist" />
+    @Html.LabelFor(model => model.ClientName)
+    @Html.TextBoxFor(model => model.ClientName)
+    @Html.LabelFor(model => model.ClientDetails)
+    @Html.TextBoxFor(model => model.ClientDetails)
+    <input type="submit" value="Add new Client" />
 }
 <br>
-<p>@Html.ActionLink("Show all Stylists", "Index")</p>
+<p>@Html.ActionLink("Show all Stylists", "Index","Stylists")</p>
 <p>@Html.ActionLink("Go Home","Index","Home")</p>
