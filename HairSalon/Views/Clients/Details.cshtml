@@ -2,10 +2,10 @@
   Layout = "_Layout";
 }
 @using HairSalon.Models;
-<h1>Stylist #@Model.Stylist.StylistId : @Model.Stylist.StylistName</h1>
-<li>@Model.Stylist.StylistDetails</li>
-<p>@Model.ClientName</p>
-<p>@Model.ClientDetails</p>
+<h1>@Model.ClientName</h1>
+<p>Details: @Model.ClientDetails</p>
+<br>
+<p>Assigned to stylist #@Model.Stylist.StylistId : @Model.Stylist.StylistName</p>
 <br>
 <p>@Html.ActionLink("Edit Client","Edit", "Clients", new {id = Model.ClientId})</p>
 <p>@Html.ActionLink("Delete Client","Delete", "Clients", new {id = Model.ClientId})</p>
