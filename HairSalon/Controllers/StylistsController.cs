@@ -40,5 +40,10 @@ namespace HairSalon.Controllers
       model.Add("clients", clients);
       return View(model);
     }
+    public ActionResult Edit(int id)
+    {
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(x => x.StylistId == id);
+      return View(thisStylist);
+    }
   } 
 }
