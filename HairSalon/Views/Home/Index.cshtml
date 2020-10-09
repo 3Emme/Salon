@@ -3,3 +3,9 @@
 }
 <h1>Welcome!</h1>
 <p>@Html.ActionLink("See all Stylists", "Index", "Stylists")</p>
+@using (Html.BeginForm("Search","Stylists"))
+  {
+    @Html.Label("Search all Stylists:")
+    @Html.TextBox("stylistName")
+    <input type="submit" value="Search!" />
+  }
