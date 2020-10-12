@@ -50,32 +50,50 @@ For reference, here are the previous weeks' objectives:
     * Input:
     * Output:
 
-  3.[x] The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming the user and providing them with a link to all Stylists.
+  3.[x] The homepage of the app at the root path (localhost:5000/) should be a splash page welcoming the user and providing them with a link to all stylists.
     * Input:
     * Output:
 
-  4.[x] The Stylists page should contain a link to a page presenting a form to add a new Stylist. After the form is submitted, the new Stylist object should be saved into a static List and Pierre should be routed back to the homepage.
+  4.[x] The Stylists page should contain a link to a form which can be used to add a new Stylist.
     * Input:
     * Output:
 
-  5.[x] Pierre should be able to click a Stylist's name and go to a new page that will display all of that Stylist's Clients.
+  5.[x] Clicking a Stylist's name will take you to a new page that will display all of that Stylist's details and clients.
     * Input:
     * Output:
 
-  6.[x] Pierre should be provided with a link to a page presenting him with a form to create a new Order for a particular Stylist.
+  6.[x] On the Stylist details page, 
     * Input:
     * Output:
 
 ## Setup/Installation Requirements
 
+* First, recreate the database schema by connecting to a local instance within MySql Workbench (instal information can be found here if you have not already done so https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
+* Query and run the following in a new tab:
+  * CREATE DATABASE `emme_buentiempo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;CREATE TABLE `clients` (
+  `ClientID` int NOT NULL AUTO_INCREMENT,
+  `ClientName` varchar(45) DEFAULT NULL,
+  `ClientDetails` mediumtext,
+  `StylistId` int DEFAULT NULL,
+  PRIMARY KEY (`ClientID`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;CREATE TABLE `stylists` (
+  `StylistId` int NOT NULL AUTO_INCREMENT,
+  `StylistName` varchar(255) DEFAULT NULL,
+  `StylistDetails` mediumtext,
+  PRIMARY KEY (`StylistId`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+Then, to run the application:
 * _open terminal_
 * _type "cd desktop", then press enter_
-* _type "git clone https://github.com/3emme/OrderTrack", then press enter_
-* _locate and open directory on desktop named "OrderTrack" with your console of choice_
-* _in console, locate and move to the directory inside called OrderTrack_
-* _in console, run $dotnet restore_
-* _in console, run $dotnet run_
-
+* _type "git clone https://github.com/3emme/HairSalon", then press enter_
+* _locate and open directory on desktop named "HairSalon" with your console of choice_
+* _If necessary, update the appsettings.json file with your personal mysql username/password:_
+  * {"ConnectionStrings": {"DefaultConnection": "Server=localhost;Port=3306;database=hair_salon;uid={YOUR USERNAME};pwd={YOUR USERNAME}"}
+* _(in console) locate and move to the directory inside called OrderTrack_
+* _(in console) run $dotnet restore_
+* _(in console) run $dotnet build_
+* _(in console) run $dotnet run_
 
 ## Support and contact details
 
